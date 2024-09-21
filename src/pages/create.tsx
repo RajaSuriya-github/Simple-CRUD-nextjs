@@ -7,8 +7,8 @@ export default function Create() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const router = useRouter();
-
-  const handleSubmit = async (e:any) => {
+{/*@ts-ignore */}
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.post('/api/items', { name, description });
