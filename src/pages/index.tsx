@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import axios from 'axios';
 import Link from 'next/link';
-import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react';
 
 // Define the interface for an Item
 interface Item {
