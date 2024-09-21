@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import mongoose from 'mongoose';
 
 // const MONGODB_URI ="mongodb://localhost:27017";

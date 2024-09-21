@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import dbConnect from '../../../lib/mongodb';
 import Item from '../../../models/Item';
 import { NextApiRequest, NextApiResponse } from 'next';

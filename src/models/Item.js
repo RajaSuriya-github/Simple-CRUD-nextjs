@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import mongoose from 'mongoose';
 
 const ItemSchema = new mongoose.Schema({
