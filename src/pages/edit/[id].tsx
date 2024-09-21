@@ -4,12 +4,18 @@ import axios from 'axios';
 import dbConnect from '../../lib/mongodb';
 import Item from '../../models/Item';
 import Link from 'next/link';
-export default function Edit({ item }:any) {
+// Define a type for the item prop
+type ItemType = {
+    _id: string;
+    name: string;
+    description: string;
+  };
+export default function Edit({ item }:{ item: ItemType }) {
   const [name, setName] = useState(item.name);
   const [description, setDescription] = useState(item.description);
   const router = useRouter();
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       await axios.put(`/api/items/${item._id}`, { name, description });
@@ -69,7 +75,7 @@ export default function Edit({ item }:any) {
 }
 export async function getServerSideProps(context: { params: { id: any; }; }) {
     await dbConnect();
-    const { id } = context.params;
+    const { id } = context.params as { id: string };
   
     // Fetch the item directly from the database
     const item = await Item.findById(id).lean(); 

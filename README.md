@@ -20,33 +20,6 @@ Delete: Remove items from the database.
 Styling: UI built using Tailwind CSS and Bootstrap for a responsive and clean interface.
 Database: MongoDB for data storage, using Mongoose for schema modeling.
 
-Project Structure
-
-nextjs-crud-app/
-├── components/                # Reusable components (if needed)
-│   └── [your-components.js]
-├── lib/                       # Library files
-│   └── mongodb.js             # MongoDB connection
-├── models/                    # Mongoose models
-│   └── Item.js                # Item model
-├── pages/                     # Next.js pages
-│   ├── api/                   # API routes
-│   │   └── items/             # Items API
-│   │       ├── [id].js        # Handle individual item operations
-│   │       └── index.js       # Handle all items operations
-│   ├── create.js              # Create item page
-│   ├── edit/                  # Edit item page
-│   │   └── [id].js            # Edit specific item
-│   └── index.js               # Home page to display items
-├── public/                    # Static assets
-│   └── [your-assets]          # Images, fonts, etc.
-├── styles/                    # CSS styles
-│   ├── globals.css            # Global styles (for Tailwind CSS)
-│   └── [your-styles].css      # Other styles if needed
-├── .env.local                 # Environment variables
-├── .gitignore                 # Git ignore file
-├── package.json               # Project metadata and dependencies
-└── tailwind.config.js         # Tailwind CSS configuration
 
 Getting Started
 Prerequisites
