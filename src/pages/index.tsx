@@ -1,7 +1,12 @@
 import axios from 'axios';
 import Link from 'next/link';
-//@ts-ignore
-export default function Home({ items }) {
+import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode } from 'react';
+interface Item {
+  _id: string;
+  name: string;
+  description: string;
+}
+export default function Home({ items }:any) {
   return (
     <>
     <nav className="navbar navbar-light bg-primary d-flex justify-content-center">
@@ -13,8 +18,7 @@ export default function Home({ items }) {
         <button className="bg-blue-500 text-white px-4 py-2 rounded">Add New Item</button>
       </Link>
       <ul className="mt-4">
-      {/*@ts-ignore */}
-        {items.map((item) => (
+        {items.map((item: { _id: Key | null | undefined; name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; description: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; }) => (
           <li key={item._id} className="block max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 
           border-b py-2 m-2
           ">
@@ -38,7 +42,7 @@ export default function Home({ items }) {
 
 export async function getServerSideProps() {
   const res = await axios.get('http://localhost:3000/api/items');
-  const items = res.data.data;
+  const items:Item[] = res.data.data;
 
   return { props: { items } };
 }

@@ -7,8 +7,7 @@ export default function Create() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const router = useRouter();
-{/*@ts-ignore */}
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     try {
       await axios.post('/api/items', { name, description });
@@ -17,7 +16,6 @@ export default function Create() {
       console.error(error);
     }
   };
-
   return (
     <>
      <nav className="navbar navbar-light bg-primary d-flex justify-content-center">

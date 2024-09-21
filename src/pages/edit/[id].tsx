@@ -4,13 +4,12 @@ import axios from 'axios';
 import dbConnect from '../../lib/mongodb';
 import Item from '../../models/Item';
 import Link from 'next/link';
-{/*@ts-ignore */}
-export default function Edit({ item }) {
+export default function Edit({ item }:any) {
   const [name, setName] = useState(item.name);
   const [description, setDescription] = useState(item.description);
   const router = useRouter();
-{/*@ts-ignore */}
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     try {
       await axios.put(`/api/items/${item._id}`, { name, description });
@@ -68,8 +67,7 @@ export default function Edit({ item }) {
     </>
   );
 }
-{/*@ts-ignore */}
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: { params: { id: any; }; }) {
     await dbConnect();
     const { id } = context.params;
   
