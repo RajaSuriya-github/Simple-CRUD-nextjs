@@ -16,7 +16,7 @@ export default function Home({ items }) {
       {/*@ts-ignore */}
         {items.map((item) => (
           <li key={item._id} className="block max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 
-          border-b py-2
+          border-b py-2 m-2
           ">
             {/* <Link href={`/edit/${item._id}`} legacyBehavior> */}
             <div style={{display:"flex",justifyContent:"space-between"}}>
